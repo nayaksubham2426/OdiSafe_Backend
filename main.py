@@ -5,7 +5,7 @@ import random
 app = FastAPI()
 
 # This loads your 20,000 Odisha grid points into memory
-df = pd.read_csv("data/ml_input_template.csv")
+df = pd.read_csv("ml_input_template.csv")
 
 @app.get("/")
 def home():
@@ -33,4 +33,5 @@ def get_map_data():
 
 @app.post("/api/sos")
 def post_sos(data: dict):
+
     return {"status": "SOS Received", "id": random.randint(1000, 9999)}
